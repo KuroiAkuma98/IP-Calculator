@@ -1,3 +1,4 @@
+import java.net.InetAddress;
 import java.util.Scanner;
 
 public class IpCalculator
@@ -7,11 +8,16 @@ public class IpCalculator
         System.out.println("Wpisz adres komputera:");
         Scanner scan = new Scanner(System.in);
         String data = scan.nextLine();
-        if(data == "")
+
+        // Ewentualne pobranie wlasnego adresu w przypadku gdy nie podano adresu
+        if(data.isEmpty())
         {
             System.out.println("nie podano adresu, adres zostanie pobrany z uzywanego urzadzeina");
+            InetAddress adres= InetAddress.getLocalHost();
+            adres.getAddress();
         }
-        System.out.println(data);
+
+
 
         Data your_data = new Data(data);
         if(your_data.isCorrect())
