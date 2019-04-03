@@ -10,9 +10,8 @@ public class IpCalculator
         if(data == "")
         {
             System.out.println("nie podano adresu, adres zostanie pobrany z uzywanego urzadzeina");
-            
         }
-        //System.out.println(data);
+        System.out.println(data);
 
         Data your_data = new Data(data);
         if(your_data.isCorrect())
